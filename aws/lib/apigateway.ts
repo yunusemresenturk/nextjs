@@ -43,7 +43,7 @@ export class ApiGateway extends Construct {
             restApiName: 'Project Service',
             handler: projectMicroservice,
             proxy: false
-        });
+        }); 
 
         const project = apigw.root.addResource('project');
         project.addMethod('GET'); // GET /project

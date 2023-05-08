@@ -51,6 +51,9 @@ const LoginPage: Page = () => {
                                     Forgot password?
                                 </a>
                             </div>
+                            <div className="text-center text-sm text-600">
+                                You don't have an account? <a href="/auth/register" className="text-900 hover:underline">Create Account</a>
+                            </div>
                             <Button label="Sign In" className="w-full p-3 text-xl" onClick={() => router.push('/')}></Button>
                         </div>
                     </div>
@@ -59,6 +62,40 @@ const LoginPage: Page = () => {
         </div>
     );
 };
+
+
+    
+
+
+async authorize(credentials, req) {
+    const { email, password } = credentials as any;
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            email,
+            password
+        }),
+    })
+
+    const user = await res.json()
+    console.log({ user })
+
+    if (res.ok && user) {
+        return user
+    } else {
+        return null;
+    }
+}
+],
+
+
+pages: {
+    signIn: '/auth/login',
+}
+ 
 
 LoginPage.getLayout = function getLayout(page) {
     return (

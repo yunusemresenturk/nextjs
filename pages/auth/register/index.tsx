@@ -30,29 +30,23 @@ const RegisterPage: Page = () => {
                         </div>
 
                         <div>
-                            <div className="flex flex-wrap mb-4">
-                                <div className="w-full sm:w-1/2">
-                                    <label htmlFor="firstname" className="block text-sm mb-1">First Name</label>
-                                    <InputText id="firstname" type="text" className="w-full" value={name} onChange={(e) => setName(e.target.value)} />
-                                </div>
-                                <div className="w-full sm:w-1/2 sm:pl-2">
-                                    <label htmlFor="lastname" className="block text-sm mb-1">Last Name</label>
-                                    <InputText id="lastname" type="text" className="w-full" value={surname} onChange={(e) => setSurname(e.target.value)} />
-                                </div>
-                            </div>
+                            <label htmlFor="firstname" className="block text-900 font-medium text-xl mb-2">
+                                First Name
+                            </label>
+                            <InputText id="firstname" type="text" className="w-full md:w-30rem mb-5" value={name} onChange={(e) => setName(e.target.value)} />
+                            
+                            <label htmlFor="lastname" className="block text-900 font-medium text-xl mb-2">Last Name</label>
+                            <InputText id="lastname" type="text" className="w-full md:w-30rem mb-5" value={surname} onChange={(e) => setSurname(e.target.value)} />
+                            <label htmlFor="email" className="block text-900 font-medium text-xl mb-2">Email</label>
+                            <InputText id="email" type="text" className="w-full md:w-30rem mb-5" value={email} onChange={(e) => setEmail(e.target.value)} />
+
+                            <label htmlFor="password" className="block text-900 font-medium text-xl mb-2">Password</label>
+                            <Password id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" toggleMask className="w-full mb-5" inputClassName="w-full p-3 md:w-30rem" />
                             <div className="mb-4">
-                                <label htmlFor="email" className="block text-sm mb-1">Email</label>
-                                <InputText id="email" type="text" className="w-full" value={email} onChange={(e) => setEmail(e.target.value)} />
-                            </div>
-                            <div className="mb-4">
-                                <label htmlFor="password" className="block text-sm mb-1">Password</label>
-                                <Password id="password" className="w-full" value={password} onChange={(e) => setPassword(e.target.value)} />
-                            </div>
-                            <div className="mb-4">
-                                <Button type="button" label="Create Account" className="w-full" onClick={() => router.push('/')} />
+                                <Button type="button" label="Create Account" className="w-full md:w-30rem mb-5" onClick={() => router.push('/')} />
                             </div>
                             <div className="text-center text-sm text-600">
-                                Already have an account? <a href="/auth/register" className="text-900 hover:underline">Sign in</a>
+                                Already have an account? <a href="/auth/login" className="text-900 hover:underline">Sign in</a>
                             </div>
                         </div>
                     </div>

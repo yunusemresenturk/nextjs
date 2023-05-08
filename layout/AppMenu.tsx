@@ -4,7 +4,6 @@ import React, { useContext } from 'react';
 import AppMenuitem from './AppMenuitem';
 import { LayoutContext } from './context/layoutcontext';
 import { MenuProvider } from './context/menucontext';
-import Link from 'next/link';
 import { AppMenuItem } from '../types/types';
 
 const AppMenu = () => {
@@ -24,6 +23,11 @@ const AppMenu = () => {
                     label: 'Login',
                     icon: 'pi pi-fw pi-sign-in',
                     to: '/auth/login'
+                },
+                {
+                    label: 'Register',
+                    icon: 'pi pi-fw pi-user-plus',
+                    to: '/auth/register'
                 },
                 {
                     label: 'Error',
