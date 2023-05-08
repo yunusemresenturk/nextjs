@@ -1,6 +1,6 @@
 import React, { ReactElement, Dispatch, SetStateAction, HTMLAttributeAnchorTarget, ReactNode } from 'react';
 import { NextPage } from 'next';
-import { Demo } from './demo';
+import { Demo } from './project';
 import { Toast } from 'primereact/toast';
 
 /* Next & Layout Types */
