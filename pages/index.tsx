@@ -283,7 +283,7 @@ const Crud = () => {
           >
             <Column selectionMode="multiple" headerStyle={{ width: '4rem' }}></Column>
             <Column field="name" header="Name" sortable body={nameBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
-            <Column field="status" header="Status" sortable body={statusBodyTemplate} headerStyle={{ minWidth: '10rem' }}></Column>
+            <Column field="status" header="Status" sortable body={projectStatusBodyTemplate} headerStyle={{ minWidth: '10rem' }}></Column>
             <Column field="rating" header="Reviews" body={ratingBodyTemplate} sortable></Column>
             <Column field="inventoryStatus" header="Status" body={statusBodyTemplate} sortable headerStyle={{ minWidth: '10rem' }}></Column>
             <Column body={actionBodyTemplate} headerStyle={{ minWidth: '10rem' }}></Column>
