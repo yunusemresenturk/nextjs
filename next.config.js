@@ -7,7 +7,7 @@ const nextConfig = {
         contextPath: process.env.NODE_ENV === 'production' ? '/nextjs' : '',
         /* uploadPath: process.env.NODE_ENV === 'production' ? '/nextjs/upload.php' : '/api/upload', */
     },
-    distDir: 'dev/resources/build',
+    distDir: '/dev/resources/build',
 };
 
 module.exports = nextConfig;

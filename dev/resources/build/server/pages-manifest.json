@@ -2,5 +2,14 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+<<<<<<< HEAD
   "/": "pages/index.js"
+=======
+  "/api/upload": "pages/api/upload.js",
+  "/auth/access": "pages/auth/access.html",
+  "/auth/error": "pages/auth/error.html",
+  "/auth/login": "pages/auth/login.html",
+  "/": "pages/index.html",
+  "/404": "pages/404.html"
+>>>>>>> 9613c9888f75fb36984e1739a093b74dd9ad4c31
 }
