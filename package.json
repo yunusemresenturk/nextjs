@@ -10,11 +10,8 @@
     "deploy": "npm install && npm run build && cd aws && npm install && npm run cdk-synth && npm run cdk-deploy"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@fullcalendar/core": "^6.1.6",
-=======
     "@aws-sdk/client-dynamodb": "^3.327.0",
->>>>>>> 9613c9888f75fb36984e1739a093b74dd9ad4c31
     "next": "latest",
     "primeflex": "3.3.0",
     "primeicons": "^6.0.1",

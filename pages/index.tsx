@@ -192,7 +192,7 @@ const Crud = () => {
   };
 
 
-  const projectStatusBodyTemplate = (rowData: Demo.Project) => {
+  const statusBodyTemplate = (rowData: Demo.Project) => {
     return (
       <>
         <span className="p-column-title">Status</span>
@@ -201,20 +201,11 @@ const Crud = () => {
     );
   };
 
-  const ratingBodyTemplate = (rowData: Demo.Project) => {
+  const descriptionBodyTemplate = (rowData: Demo.Project) => {
     return (
       <>
         <span className="p-column-title">Reviews</span>
-        <Rating value={rowData.rating} readOnly cancel={false} />
-      </>
-    );
-  };
-
-  const statusBodyTemplate = (rowData: Demo.Project) => {
-    return (
-      <>
-        <span className="p-column-title">Status</span>
-        <span className={`project-badge status-${rowData.inventoryStatus?.toLowerCase()}`}>{rowData.inventoryStatus}</span>
+        {rowData.description}
       </>
     );
   };
@@ -283,9 +274,8 @@ const Crud = () => {
           >
             <Column selectionMode="multiple" headerStyle={{ width: '4rem' }}></Column>
             <Column field="name" header="Name" sortable body={nameBodyTemplate} headerStyle={{ minWidth: '15rem' }}></Column>
-            <Column field="status" header="Status" sortable body={projectStatusBodyTemplate} headerStyle={{ minWidth: '10rem' }}></Column>
-            <Column field="rating" header="Reviews" body={ratingBodyTemplate} sortable></Column>
-            <Column field="inventoryStatus" header="Status" body={statusBodyTemplate} sortable headerStyle={{ minWidth: '10rem' }}></Column>
+            <Column field="inventoryDescription" header="Description" body={descriptionBodyTemplate} sortable headerStyle={{ minWidth: '10rem' }}></Column>
+            <Column field="status" header="Status" sortable body={statusBodyTemplate} headerStyle={{ minWidth: '10rem' }}></Column>
             <Column body={actionBodyTemplate} headerStyle={{ minWidth: '10rem' }}></Column>
           </DataTable>
 
