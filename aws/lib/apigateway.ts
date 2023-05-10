@@ -1,7 +1,6 @@
-import { LambdaRestApi, CfnAuthorizer, AuthorizationType } from 'aws-cdk-lib/aws-apigateway';
+import { LambdaRestApi } from 'aws-cdk-lib/aws-apigateway';
 import { Construct } from 'constructs';
 import { IFunction } from "aws-cdk-lib/aws-lambda";
-import { UserPool } from 'aws-cdk-lib/aws-cognito'
 
 interface ApiGatewayProps {
     userMicroservice: IFunction;

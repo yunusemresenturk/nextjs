@@ -18,7 +18,6 @@
       "experimentalDecorators": true,
       "strictPropertyInitialization": false,
       "typeRoots": ["./node_modules/@types"],
-      "outDir": "InfraBuild"
   },
-  "exclude": ["node_modules", "cdk.out", "InfraBuild"]
+  "exclude": ["node_modules", "cdk.out"]
 }

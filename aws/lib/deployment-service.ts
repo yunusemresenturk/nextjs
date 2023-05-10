@@ -5,7 +5,7 @@ import { S3Origin } from 'aws-cdk-lib/aws-cloudfront-origins';
 import { BlockPublicAccess, Bucket } from 'aws-cdk-lib/aws-s3';
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment';
 
-const path = '../dev/resources/build';
+const path = '/../out';
 
 export class DeploymentService extends Construct {
     constructor(scope: Construct, id: string) {
@@ -22,12 +22,12 @@ export class DeploymentService extends Construct {
                 origin: new S3Origin(hostingBucket),
                 viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
             },
-            defaultRootObject: 'index.tsx',
+            defaultRootObject: 'index.html',
             errorResponses: [
                 {
                     httpStatus: 404,
                     responseHttpStatus: 200,
-                    responsePagePath: '/index.tsx',
+                    responsePagePath: '/index.html',
                 },
             ],
         });

@@ -62,10 +62,7 @@ const LoginPage: Page = () => {
         </div>
     );
 };
-
-
-    
-
+/* 
 
 async authorize(credentials, req) {
     const { email, password } = credentials as any;
@@ -95,7 +92,7 @@ async authorize(credentials, req) {
 pages: {
     signIn: '/auth/login',
 }
- 
+  */
 
 LoginPage.getLayout = function getLayout(page) {
     return (

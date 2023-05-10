@@ -37,7 +37,7 @@
 
       // User microservices lambda function
       const userFunction = new NodejsFunction(this, 'userLambdaFunction', {
-        entry: join(__dirname, `/../src/users/index.js`),
+        entry: join(__dirname, `/../functions/users/index.js`),
         ...nodeJsFunctionProps,
       });
 
@@ -60,7 +60,7 @@
 
       // Project microservices lambda function
       const projectFunction = new NodejsFunction(this, 'projectLambdaFunction', {
-        entry: join(__dirname, `/../src/projects/index.js`),
+        entry: join(__dirname, `/../functions/projects/index.js`),
         ...nodeJsFunctionProps,
       });
 
@@ -69,4 +69,3 @@
       return projectFunction;
     }
   }
-  // Path: aws\lib\index.ts
