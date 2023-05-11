@@ -24,12 +24,5 @@ export class AwsMicroservicesStack extends Stack {
     });
 
     new DeploymentService(this, 'DeploymentService');
-    
-    // The code that defines your stack goes here
-
-    // example resource
-    // const queue = new sqs.Queue(this, 'AwsQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
   }
 }

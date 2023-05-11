@@ -5,7 +5,6 @@ const nextConfig = {
     basePath: process.env.NODE_ENV === 'production' ? '/nextjs' : '',
     publicRuntimeConfig: {
         contextPath: process.env.NODE_ENV === 'production' ? '/nextjs' : '',
-        /* uploadPath: process.env.NODE_ENV === 'production' ? '/nextjs/upload.php' : '/api/upload', */
     },
 };
 

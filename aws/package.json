@@ -13,6 +13,7 @@
     "cdk-deploy": "cdk deploy"
   },
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.115",
     "@types/jest": "^29.4.0",
     "@types/node": "18.14.6",
     "@types/uuid": "^9.0.1",
@@ -27,8 +28,9 @@
     "@aws-sdk/client-dynamodb": "^3.328.0",
     "@aws-sdk/util-dynamodb": "^3.328.0",
     "aws-cdk-lib": "2.76.0",
+    "aws-lambda": "^1.0.7",
     "aws-sdk": "^2.1373.0",
-    "cdk-nextjs-serverless": "^1.0.6",
+    "cdk-nextjs-serverless": "^1.0.0",
     "constructs": "^10.0.0",
     "source-map-support": "^0.5.21",
     "uuid": "^9.0.0"

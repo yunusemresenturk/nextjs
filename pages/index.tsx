@@ -12,6 +12,7 @@ import { Toolbar } from 'primereact/toolbar';
 import { classNames } from 'primereact/utils';
 import React, { use, useEffect, useRef, useState } from 'react';
 import { Demo } from '../types/types';
+import { ProjectService } from '../aws/lib/projectService';
 
 const Crud = () => {
   let emptyProject: Demo.Project = {
@@ -33,12 +34,9 @@ const Crud = () => {
   const dt = useRef<DataTable<Demo.Project[]>>(null);
 
   useEffect(() => {
-    fetch('https://localhost:3000')
-      .then(response => response.json())
-      .then(data => setProjects(data))
-      .catch(error => console.error(error));
+    ProjectService.getProjects().then((data) => setProjects(data));
   }, []);
-  
+
 
   const openNew = () => {
     setProject(emptyProject);
