@@ -2,7 +2,7 @@
 const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
-    basePath: process.env.NODE_ENV === 'production' ? '/nextjs' : '',
+    basePath: '/project', // base path of the project
     publicRuntimeConfig: {
         contextPath: process.env.NODE_ENV === 'production' ? '/nextjs' : '',
     },

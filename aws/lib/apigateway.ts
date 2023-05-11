@@ -51,17 +51,6 @@ export class ApiGateway extends Construct {
         const updateProjectIntegration = new LambdaIntegration(projectMicroservice.updateProjectFunction);
         const deleteProjectIntegration = new LambdaIntegration(projectMicroservice.deleteProjectFunction);
 
-        /* const projectIntegrations: Record<keyof ProjectLambdaFunctions, LambdaIntegration> = {} as any;
-        for (const [key, lambdaFunction] of Object.entries(projectMicroservice)) {
-            projectIntegrations[key as keyof ProjectLambdaFunctions] = new LambdaIntegration(lambdaFunction);
-        }
-
-        const getProjectIntegration = projectIntegrations.getProjectFunction;
-        const getAllProjectsIntegration = projectIntegrations.getAllProjectsFunction;
-        const createProjectIntegration = projectIntegrations.createProjectFunction;
-        const updateProjectIntegration = projectIntegrations.updateProjectFunction;
-        const deleteProjectIntegration = projectIntegrations.deleteProjectFunction; */
-
         const project = apigw.root.addResource('project');
         project.addMethod('GET', getAllProjectsIntegration); // GET /project
         project.addMethod('POST', createProjectIntegration);  // POST /project
@@ -75,3 +64,13 @@ export class ApiGateway extends Construct {
 
 
 
+ /* const projectIntegrations: Record<keyof ProjectLambdaFunctions, LambdaIntegration> = {} as any;
+        for (const [key, lambdaFunction] of Object.entries(projectMicroservice)) {
+            projectIntegrations[key as keyof ProjectLambdaFunctions] = new LambdaIntegration(lambdaFunction);
+        }
+
+        const getProjectIntegration = projectIntegrations.getProjectFunction;
+        const getAllProjectsIntegration = projectIntegrations.getAllProjectsFunction;
+        const createProjectIntegration = projectIntegrations.createProjectFunction;
+        const updateProjectIntegration = projectIntegrations.updateProjectFunction;
+        const deleteProjectIntegration = projectIntegrations.deleteProjectFunction; */

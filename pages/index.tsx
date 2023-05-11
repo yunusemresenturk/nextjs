@@ -2,7 +2,7 @@ import { Button } from 'primereact/button';
 import { Column } from 'primereact/column';
 import { DataTable } from 'primereact/datatable';
 import { Dialog } from 'primereact/dialog';
-import { FileUpload } from 'primereact/fileupload';
+import { FileUpload } from 'primereact/fileupload'; 
 import { InputNumberValueChangeEvent } from 'primereact/inputnumber';
 import { InputText } from 'primereact/inputtext';
 import { InputTextarea } from 'primereact/inputtextarea';
@@ -57,28 +57,46 @@ const Crud = () => {
     setDeleteProjectsDialog(false);
   };
 
-  const saveProject = () => {
+  const saveProject = async () => {
     setSubmitted(true);
-
+  
     if (project.name.trim()) {
       let _projects = [...projects];
       let _project = { ...project };
       if (project.id) {
+        // Update an existing project using your API
+        const response = await fetch(`/projects/${project.id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(project),
+        });
+        const updatedProject = await response.json();
+  
         const index = findIndexById(project.id);
-
-        _projects[index] = _project;
+        _projects[index] = updatedProject;
         toast.current?.show({ severity: 'success', summary: 'Successful', detail: 'Project Updated', life: 3000 });
       } else {
-        _project.id = createId();
+        // Create a new project using your API
+        const response = await fetch('/projects', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(project),
+        });
+        const newProject = await response.json();
+  
+        _project.id = newProject.id;
         _project.image = 'project-placeholder.svg';
         _projects.push(_project);
         toast.current?.show({ severity: 'success', summary: 'Successful', detail: 'Project Created', life: 3000 });
       }
-
+  
       setProjects(_projects);
       setProjectDialog(false);
-      /*       setProject(emptyProject);*/
-      setProject({ ...emptyProject })
+      setProject({ ...emptyProject });
     }
   };
 
@@ -92,14 +110,19 @@ const Crud = () => {
     setDeleteProjectDialog(true);
   };
 
-  const deleteProject = () => {
+  const deleteProject = async () => {
+    // Delete a project using your API
+    await fetch(`/projects/${project.id}`, {
+      method: 'DELETE',
+    });
+  
     let _projects = projects.filter((val) => val.id !== project.id);
     setProjects(_projects);
     setDeleteProjectDialog(false);
     setProject(emptyProject);
     toast.current?.show({ severity: 'success', summary: 'Successful', detail: 'Project Deleted', life: 3000 });
   };
-
+  
   const findIndexById = (id: string) => {
     let index = -1;
     for (let i = 0; i < projects.length; i++) {
@@ -336,6 +359,3 @@ const Crud = () => {
 };
 
 export default Crud;
-
-
-// Path: '/crud'
