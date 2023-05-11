@@ -117,8 +117,8 @@ declare namespace Demo {
         createdAt: number;
     }
 
-    //ProductService
-    type Product = {
+    //ProjectService
+    type Project = {
         id?: string;
         code?: string;
         name: string;
@@ -129,20 +129,8 @@ declare namespace Demo {
         quantity?: number;
         inventoryStatus?: InventoryStatus;
         rating?: number;
-        orders?: ProductOrder[];
-        [key: string]: string | string[] | number | boolean | undefined | ProductOrder[] | InventoryStatus;
+        [key: string]: string | string[] | number | boolean | undefined | InventoryStatus;
     };
-
-    type ProductOrder = {
-        id?: string;
-        productCode?: string;
-        date?: string;
-        amount?: number;
-        quantity?: number;
-        customer?: string;
-        status?: Status;
-    };
-
     type Payment = {
         name: string;
         amount: number;

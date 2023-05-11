@@ -5,7 +5,7 @@ import { S3Origin } from 'aws-cdk-lib/aws-cloudfront-origins';
 import { BlockPublicAccess, Bucket } from 'aws-cdk-lib/aws-s3';
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment';
 
-const path = '/../out';
+const path = 'C:/Users/ASUS/Desktop/mein/new/nextjs-blog/out';
 
 export class DeploymentService extends Construct {
     constructor(scope: Construct, id: string) {

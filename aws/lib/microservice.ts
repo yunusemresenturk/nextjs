@@ -10,6 +10,9 @@
   }
 
   export class Microservices extends Construct {
+    getProjects() {
+      throw new Error('Method not implemented.');
+    }
 
     public readonly userMicroservice: NodejsFunction;
     public readonly projectMicroservice: NodejsFunction;

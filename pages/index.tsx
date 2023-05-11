@@ -3,16 +3,14 @@ import { Column } from 'primereact/column';
 import { DataTable } from 'primereact/datatable';
 import { Dialog } from 'primereact/dialog';
 import { FileUpload } from 'primereact/fileupload';
-import { InputNumber, InputNumberValueChangeEvent } from 'primereact/inputnumber';
+import { InputNumberValueChangeEvent } from 'primereact/inputnumber';
 import { InputText } from 'primereact/inputtext';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { RadioButton, RadioButtonChangeEvent } from 'primereact/radiobutton';
-import { Rating } from 'primereact/rating';
 import { Toast } from 'primereact/toast';
 import { Toolbar } from 'primereact/toolbar';
 import { classNames } from 'primereact/utils';
-import React, { useEffect, useRef, useState } from 'react';
-import { Microservices } from '../aws/lib/microservice';
+import React, { use, useEffect, useRef, useState } from 'react';
 import { Demo } from '../types/types';
 
 const Crud = () => {
@@ -35,11 +33,12 @@ const Crud = () => {
   const dt = useRef<DataTable<Demo.Project[]>>(null);
 
   useEffect(() => {
+    fetch('https://localhost:3000')
+      .then(response => response.json())
+      .then(data => setProjects(data))
+      .catch(error => console.error(error));
   }, []);
-
-  const formatCurrency = (value: number) => {
-    return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-  };
+  
 
   const openNew = () => {
     setProject(emptyProject);
@@ -80,7 +79,8 @@ const Crud = () => {
 
       setProjects(_projects);
       setProjectDialog(false);
-      setProject(emptyProject);
+      /*       setProject(emptyProject);*/
+      setProject({ ...emptyProject })
     }
   };
 

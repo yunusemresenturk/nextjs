@@ -12,6 +12,7 @@
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.327.0",
     "@fullcalendar/core": "^6.1.6",
+    "@next-auth/dynamodb-adapter": "^3.0.2",
     "next": "latest",
     "next-auth": "^4.22.1",
     "primeflex": "3.3.0",
@@ -19,7 +20,8 @@
     "primereact": "9.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-transition-group": "^4.4.1"
+    "react-transition-group": "^4.4.1",
+    "swr": "^2.1.5"
   },
   "devDependencies": {
     "@types/aws-sdk": "^2.7.0",

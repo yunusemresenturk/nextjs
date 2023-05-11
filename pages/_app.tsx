@@ -6,6 +6,7 @@ import 'primeicons/primeicons.css';
 import '../styles/layout/layout.scss';
 import { AppProps } from 'next/app';
 import type { Page } from '../types/types';
+import { getProviders } from 'next-auth/react';
 
 type Props = AppProps & {
     Component: Page;

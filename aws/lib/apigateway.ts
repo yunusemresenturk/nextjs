@@ -36,7 +36,7 @@ export class ApiGateway extends Construct {
         singleUser.addMethod('DELETE'); // DELETE /user/{id}
     }
 
-    private createProjectApi(projectMicroservice: IFunction) {
+    private createProjectApi(projectMicroservice: IFunction) {  
 
         const apigw = new LambdaRestApi(this, 'projectApi', {
             restApiName: 'Project Service',
